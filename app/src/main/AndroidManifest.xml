@@ -17,8 +17,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SecondActivity"
-            android:label="World Map">
+        <activity android:name=".SecondActivity">
             
         </activity>
     </application>

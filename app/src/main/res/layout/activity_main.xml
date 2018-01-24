@@ -17,9 +17,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button"
-            android:text="Button"
+            android:id="@+id/button_liste"
+            android:text="Liste de restaurants connus"
             />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Veuillez rentrez un nom de ville afin de rechercher des restaurants"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -42,8 +47,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button_fragment"
-            android:text="Show map"
-            app:layout_constraintTop_toBottomOf="@+id/button"
+            android:text="Instructions"
+            app:layout_constraintTop_toBottomOf="@+id/btn_add"
             />
 
 

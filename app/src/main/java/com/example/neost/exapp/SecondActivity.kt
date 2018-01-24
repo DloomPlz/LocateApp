@@ -17,13 +17,16 @@ class SecondActivity : AppCompatActivity() {
         recycler.setHasFixedSize(true)
         recycler.layoutManager= LinearLayoutManager(this)
         val adapter : MyAdapter = MyAdapter(this)
-        val list : ArrayList<String> = ArrayList()
-        list.add("Voici")
-        list.add(" une")
-        list.add(" carte")
-        list.add(" du")
-        list.add(" monde.")
-        adapter.setData( list)
+        val restau_name : ArrayList<String> = ArrayList()
+        val restau_city : ArrayList<String> = ArrayList()
+        val restau_desc : ArrayList<String> = ArrayList()
+
+        // Name - City - Desc
+        restau_name.add("Chez René")
+        restau_city.add("Paris 11e")
+        restau_desc.add("Très jolie restaurant j'adore xd")
+
+        adapter.setData( restau_name, restau_city, restau_desc)
         recycler.adapter = adapter
     }
 

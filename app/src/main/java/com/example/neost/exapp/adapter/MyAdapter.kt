@@ -15,7 +15,8 @@ import kotlinx.android.synthetic.main.layout_cells.view.*
 
 class MyAdapter(val context : Context) : RecyclerView.Adapter<MyAdapter.ItemViewHolder>() {
 
-    private var list : ArrayList<String> = ArrayList()
+    private var restau : List<Triple<String,String,String>> = ArrayList()
+
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ItemViewHolder {
         return ItemViewHolder(LayoutInflater.from(context).inflate(R.layout.layout_cells, parent, false))
@@ -23,15 +24,16 @@ class MyAdapter(val context : Context) : RecyclerView.Adapter<MyAdapter.ItemView
 
     override fun onBindViewHolder(holder: ItemViewHolder?, position: Int) {
         //holder est l'objet cellule
-        holder?.itemView?.cells_text_view?.text = list[position]
+        // TROUVER COMMENT DONNER A CHAQUE CELLULE LE COMPOSANT DU TRIPLE LIST
+       // holder?.itemView?.cells_restau_name?.text = restau.indexOf()
     }
 
     override fun getItemCount(): Int {
-        return this.list.size;
+        return this.restau.size;
     }
 
-    fun setData(list : ArrayList<String>) {
-        this.list = list
+    fun setData(res_name : ArrayList<String>, res_city : ArrayList<String>, res_description : ArrayList<String> ) {
+        this.restau
         notifyDataSetChanged()
     }
 
