@@ -18,8 +18,11 @@ class SecondActivity : AppCompatActivity() {
         recycler.layoutManager= LinearLayoutManager(this)
         val adapter : MyAdapter = MyAdapter(this)
         val list : ArrayList<String> = ArrayList()
-        list.add("Salut")
-        list.add("je")
+        list.add("Voici")
+        list.add(" une")
+        list.add(" carte")
+        list.add(" du")
+        list.add(" monde.")
         adapter.setData( list)
         recycler.adapter = adapter
     }

@@ -1,11 +1,14 @@
 package com.example.neost.exapp
 
+import android.app.Fragment
 import android.app.FragmentManager
+import android.app.FragmentTransaction
 import android.content.Intent
 import android.graphics.drawable.Animatable
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -18,6 +21,19 @@ class MainActivity : LifecycleLoggingActivity() {
     lateinit var mEditTextReveal : EditText
 
     lateinit var mAddButton : ImageButton
+
+    fun showHideFragment(fragment : MyFragment)
+    {
+        val ft : android.support.v4.app.FragmentTransaction? = supportFragmentManager.beginTransaction()
+        ft?.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+        if (fragment.isHidden()) {
+            ft?.show(fragment);
+            Log.d("hidden","Show");
+        } else {
+            ft?.hide(fragment);
+            Log.d("Shown","Hide");
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +56,22 @@ class MainActivity : LifecycleLoggingActivity() {
         val btnFragment : Button = findViewById(R.id.button_fragment)
         btnFragment.setOnClickListener(View.OnClickListener {
             val fragmentManager = supportFragmentManager
+            fragmentManager.beginTransaction().setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
             fragmentManager?.beginTransaction()?.replace(R.id.fragment_main,MyFragment())?.commit()
+           /* val fragment : MyFragment =  MyFragment()
+            val ft : android.support.v4.app.FragmentTransaction? = supportFragmentManager.beginTransaction()
+            ft?.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+            if (fragment.isHidden()) {
+                ft?.show(fragment);
+                Log.d("hidden","Show");
+            } else {
+                ft?.hide(fragment);
+                Log.d("Shown","Hide");
+            } */
         })
     }
+
+
 
     fun makeMapsIntent(address : String) : Intent
     {
@@ -66,7 +95,6 @@ class MainActivity : LifecycleLoggingActivity() {
     {
         // Start activity to map the adress
 
-        val mAnimatable : Animatable
 
         if (mIsEditTextVisible)
         {
