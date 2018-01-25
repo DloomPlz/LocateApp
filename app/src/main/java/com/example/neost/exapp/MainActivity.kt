@@ -31,6 +31,7 @@ class MainActivity : LifecycleLoggingActivity() {
         mEditTextReveal.visibility = View.INVISIBLE
         mIsEditTextVisible = false;
 
+
         val btn : Button = findViewById(R.id.button)
         btn.setOnClickListener(View.OnClickListener {
          startActivity(SecondActivity.getStartingIntent(this))
@@ -42,6 +43,8 @@ class MainActivity : LifecycleLoggingActivity() {
             val fragmentManager = supportFragmentManager
             fragmentManager?.beginTransaction()?.replace(R.id.fragment_main,MyFragment())?.commit()
         })
+
+
     }
 
     fun makeMapsIntent(address : String) : Intent
