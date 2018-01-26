@@ -37,6 +37,12 @@ class MainActivity : LifecycleLoggingActivity() {
             //finish()
         })
 
+        val btnApi : Button = findViewById(R.id.Launch_Api)
+        btnApi.setOnClickListener(View.OnClickListener {
+            startActivity(ApiActivity.getStartingIntent(this))
+            //finish()
+        })
+
         val btnFragment : Button = findViewById(R.id.button_fragment)
         btnFragment.setOnClickListener(View.OnClickListener {
             val fragmentManager = supportFragmentManager
