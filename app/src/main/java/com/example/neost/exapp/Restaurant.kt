@@ -1,8 +1,6 @@
 package com.example.neost.exapp
 
-/**
- * Created by neost on 24/01/2018.
- */
+
 
 class Restaurant {
     var name: String? = ""
