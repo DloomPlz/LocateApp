@@ -2,6 +2,5 @@
     <string name="app_name">ExApp</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="Launch_anim">Launch</string>
-
+    <string name="hello_pink_fragment">Hello pink fragment</string>
 </resources>

@@ -1,7 +1,8 @@
 package com.example.neost.exapp
 
-import android.os.AsyncTask
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.os.AsyncTask
 import android.widget.TextView
 
 class PreLoader(private val ui_statusLabel: TextView) : AsyncTask<String, Int, String>() {
@@ -49,5 +50,4 @@ class PreLoader(private val ui_statusLabel: TextView) : AsyncTask<String, Int, S
         myResult = sep[0] + "\n" + sep[1]+ "\n" + sep[2]+ "\n" + sep[3]+ "\n" + sep[4]
         ui_statusLabel.text = myResult;
     }
-
 }

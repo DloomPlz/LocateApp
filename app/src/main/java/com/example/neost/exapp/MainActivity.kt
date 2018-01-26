@@ -31,8 +31,7 @@ class MainActivity : LifecycleLoggingActivity() {
         mEditTextReveal.visibility = View.INVISIBLE
         mIsEditTextVisible = false;
 
-
-        val btn : Button = findViewById(R.id.button)
+        val btn : Button = findViewById(R.id.button_liste)
         btn.setOnClickListener(View.OnClickListener {
          startActivity(SecondActivity.getStartingIntent(this))
             //finish()
@@ -43,14 +42,12 @@ class MainActivity : LifecycleLoggingActivity() {
             val fragmentManager = supportFragmentManager
             fragmentManager?.beginTransaction()?.replace(R.id.fragment_main,MyFragment())?.commit()
         })
-
-
     }
 
     fun makeMapsIntent(address : String) : Intent
     {
         return Intent (Intent.ACTION_VIEW,
-                Uri.parse("geo:0,0?q=" + Uri.encode(address)))
+                Uri.parse("geo:0,0?q=" + Uri.encode(address) + " restaurant"))
 
 
     }
@@ -58,7 +55,7 @@ class MainActivity : LifecycleLoggingActivity() {
     fun makeBrowserIntent(address : String) : Intent
     {
         val intent : Intent = Intent (Intent.ACTION_VIEW,
-        Uri.parse("geo:0,0?q=" + Uri.encode(address)))
+        Uri.parse("geo:0,0?q=" + Uri.encode(address) + " restaurant"))
 
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
